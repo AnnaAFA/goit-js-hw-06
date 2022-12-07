@@ -17,7 +17,7 @@ const listRef = document.querySelector('.gallery');
 // console.log(listRef);
 
 const image = images.map(({ url, alt }) => {
-  const liRef = `<li><img src="${url}" alt="${alt}" width="200px"></li>`;
+  const liRef = `<li><img src="${url}" alt="${alt}"  height="150px"></li>`;
   return liRef;
 });
 // console.log(image);
