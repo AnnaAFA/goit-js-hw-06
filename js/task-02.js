@@ -5,7 +5,7 @@ const ingredients = ['Potatoes', 'Mushrooms', 'Garlic', 'Tomatos', 'Herbs', 'Con
 // itemRef.classList.add('item');
 // console.log(itemRef);
 
-const listRef = document.querySelector('#ingredients');
+// const listRef = document.querySelector('#ingredients');
 // console.log(listRef);
 
 // ------------------------------------
@@ -21,16 +21,16 @@ const listRef = document.querySelector('#ingredients');
 // console.log(elements);
 // listRef.append(...elements);
 
-// -------------------------------------
+// -------------------------------------!
 
-const elements = ingredients.map(el => {
-  const itemRef = document.createElement('li');
-  itemRef.textContent = el;
-  itemRef.classList.add('item');
-  return itemRef;
-});
-console.log(elements);
-listRef.append(...elements);
+// const elements = ingredients.map(el => {
+//   const itemRef = document.createElement('li');
+//   itemRef.textContent = el;
+//   itemRef.classList.add('item');
+//   return itemRef;
+// });
+// console.log(elements);
+// listRef.append(...elements);
 
 // --------------------------------------
 
@@ -44,3 +44,23 @@ listRef.append(...elements);
 // };
 // const elements = makeMarkup(ingredients);
 // listRef.append(...elements);
+
+// __________________________________________________
+
+const listRef = document.querySelector('#ingredients');
+// console.log(listRef);
+
+const makeMarkup = ingredient => {
+  const itemRef = document.createElement('li');
+  // console.log(itemRef);
+  itemRef.textContent = ingredient;
+  // console.log(itemRef.textContent);
+  itemRef.classList.add('item');
+
+  return itemRef;
+};
+console.log(makeMarkup(ingredients[0]));
+// listRef.append(makeMarkup(ingredients[0]));
+
+const elements = ingredients.map(makeMarkup);
+listRef.append(...elements);

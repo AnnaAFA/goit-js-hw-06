@@ -13,15 +13,29 @@ const images = [
   },
 ];
 
+// const listRef = document.querySelector('.gallery');
+// // console.log(listRef);
+
+// const image = images.map(({ url, alt }) => {
+//   const liRef = `<li><img src="${url}" alt="${alt}"  height="150px"></li>`;
+//   return liRef;
+// });
+// // console.log(image);
+// const imageStr = image.join('');
+// console.log(imageStr);
+
+// listRef.insertAdjacentHTML('beforeend', imageStr);
+
+// __________________________________________________
+
 const listRef = document.querySelector('.gallery');
-// console.log(listRef);
 
-const image = images.map(({ url, alt }) => {
-  const liRef = `<li><img src="${url}" alt="${alt}"  height="150px"></li>`;
-  return liRef;
-});
-// console.log(image);
-const imageStr = image.join('');
-console.log(imageStr);
+const makeMarkup = ({ url, alt }) => {
+  return `<li><img src="${url}" alt="${alt}" height=200></li>`;
+};
+// console.log(makeMarkup(images[0]));
 
-listRef.insertAdjacentHTML('beforeend', imageStr);
+const makeMarkupAll = images.map(makeMarkup).join('');
+console.log(makeMarkupAll);
+
+listRef.insertAdjacentHTML('beforeend', makeMarkupAll);
